@@ -1,0 +1,1 @@
+"use strict";document.querySelector(".tap").addEventListener("click",function(){alert("666")});

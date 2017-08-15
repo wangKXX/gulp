@@ -1,0 +1,135 @@
+$version: "1.0.0";
+/*!version #{$version} compiled by kaiWang Date:2012-08-15*/
+
+//单位
+$px: px;
+$bottomRight: bottom-right;
+$topRight: top-right;
+$bottomLeft: bottom-left;
+$topLeft: top-left;
+
+//设置兼容性的圆角
+
+
+@mixin setBorderRad($str){
+    border-radius: $str#{$px};
+    -webkit-border-radius: $str#{$px};
+    -moz-border-radius: $str#{$px};
+}
+
+ //设置兼容性的单个圆角
+
+@mixin borderRadius($rediou, $postion){
+    -moz-border-#{$postion}-radius: $rediou#{$px};
+    -webkit-border-#{$postion}-radius: $rediou#{$px};
+    border-#{$postion}-radius: $rediou#{$px};
+}
+
+ 
+//设置表格边框样式
+
+
+@mixin setTabTdborder($width, $color, $type){
+    border-right: $width $type $color;
+    border-bottom: $width $type $color;
+}
+
+@mixin setTabBorder($width,$color,$type){
+    border-left: $width $type $color;
+    border-top: $width $type $color;    
+}
+
+    
+//修改placeholder的样式
+
+@mixin setPlaceHolder($font-color,$font-size){
+    color: $font-color;
+    opacity:1;
+    font-size: $font-size;
+    font-weight: 500; 
+}
+     
+//兼容型渐变
+//由于ie兼容的原因颜色值必须使用#000000的形式
+ 
+
+@mixin setColorChange($form,$to){
+    filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#{$form},endcolorstr=#{$to},gradientType=0);
+    -ms-filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#{$form},endcolorstr=#{$to},gradientType=0);/*IE8*/    
+    background:#{$form}; 
+    background:-moz-linear-gradient(top, #{$form}, #{$to});  
+    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#{$form}), to(#{$to}));  
+    background:-o-linear-gradient(top, #{$form}, #{$to}); 
+}
+     
+//从下到上滑入
+ 
+
+
+@mixin sliderIn($time,$type){
+    -webkit-animation-duration: $time;
+    -moz-animation-duration: $time;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -webkit-animation-name: flyIn;
+    -moz-animation-name: flyIn;
+    @if $type == 1{
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+    }
+}
+$flyInheight: "-150px";
+@keyframes flyIn{
+    from{
+        bottom: #{$flyInheight}
+    }
+    to{
+        bottom: 0px;
+    }
+}
+
+     
+//抖动效果
+
+
+@mixin shake($time:2s,$type: 1){
+    -webkit-animation-duration: $time;
+    -moz-animation-duration: $time;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -webkit-animation-name: flyIn;
+    -moz-animation-name: flyIn;
+    @if $type == 1{
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+    }
+}
+
+@-webkit-keyframes shake {  
+    0%, 100% {
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        }  
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translateX(-10px);
+        -moz-transform: translateX(-10px);
+        }  
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translateX(10px);
+        -moz-transform: translateX(10px);
+        }  
+}
+
+     
+//横向排列兼容ie6,7
+ 
+
+@mixin line{
+    display: inline-block;
+    vertical-align: top;
+    *display: inline;
+    *zoom: 1;
+    font-size: 0;//解决display间隙
+    -webkit-text-size-adjust:none;
+}
+

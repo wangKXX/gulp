@@ -1,0 +1,59 @@
+.a {
+  color: red;
+}
+.f {
+  color: red;
+}
+.te,
+h2 {
+  width: 100px;
+}
+.te.x,
+h2.x {
+  height: 1200px;
+}
+.p.te,
+.ph2 {
+  border-radius: 10px;
+}
+.l p {
+  display: block;
+}
+div,
+h1 {
+  width: 33 px;
+}
+h1 {
+  background-color: #fff;
+}
+h2 {
+  font-size: 20px;
+}
+.borderRadius {
+  box-sizing: content-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+strong {
+  font-size: 10px;
+}
+section {
+  height: 60 px;
+  height: 70 px;
+  height: 80 px;
+}
+.t {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+a {
+  display: inline-block;
+  width: 20px;
+}

@@ -1,0 +1,1 @@
+"use strict";function _classCallCheck(n,t){if(!(n instanceof t))throw new TypeError("Cannot call a class as a function")}document.querySelector(".tap").addEventListener("click",function(){alert("888")});

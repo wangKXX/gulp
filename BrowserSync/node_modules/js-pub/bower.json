@@ -1,0 +1,18 @@
+{
+  "name": "js-pub",
+  "description": "Create global path-referencing functions at run-time.",
+  "main": "build/Pub.min.js",
+  "authors": [
+    "Karl Hepler <karl.hepler@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/oldtimeguitarguy/js-pub",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
